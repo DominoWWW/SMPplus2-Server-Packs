@@ -19,4 +19,4 @@ jobs:
       - uses: vimtor/action-zip@v1.2
         with:
           files: Hub/
-          dest: hub-pack.zip
+          dest: ${{ github.workspace }}/result.zip
