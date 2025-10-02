@@ -1,10 +1,7 @@
 {
   "pack": {
-    "pack_format": 46,
-    "supported_formats": [
-      46,
-      55
-    ],
+    "pack_format": 81,
+    "supported_formats": [],
     "description": [
       {
         "text": "Example ",
