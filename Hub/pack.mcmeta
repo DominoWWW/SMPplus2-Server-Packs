@@ -5,14 +5,16 @@
         "description": [
             {
                 "text": "Hub Resource Pack",
-                "bold": true,"color":"gold"
+                "bold": true,
+                "color": "gold"
             },
             {
                 "text": "\n"
             },
             {
-                "text":"https://github.com/DominoWWW/SMPplus2-Server-Packs",
+                "text":"github.com/DominoWWW/SMPplus2-Server-Packs",
                 "italic":true,
+                "bold": false,
                 "color":"gray"
             }
         ]
