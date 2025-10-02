@@ -14,13 +14,13 @@ jobs:
         with:
           resourcepack: ./resources
           config: .github/workflows/validate-resource-pack-config.json
-      - name: 👉👈 zip
+      - name: 🤐 zip
         uses: actions/checkout@v2
       - uses: vimtor/action-zip@v1.2
         with:
           files: Hub/
           dest: hub.zip
-      - name: push
+      - name: 🫸push
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
