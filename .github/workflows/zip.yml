@@ -1,0 +1,22 @@
+name: zip
+on:
+  push:
+    branches:
+      - main
+jobs:
+  validate-zip-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+      - name: 🔎 Validate Resource Pack
+        uses: MrKinau/ResourcePackValidator@v1
+        with:
+          resourcepack: ./resources
+          config: .github/workflows/validate-resource-pack-config.json
+      - name: 👉👈 zip
+        uses: actions/checkout@v2
+      - uses: vimtor/action-zip@v1.2
+        with:
+          files: Hub/
+          dest: hub-pack.zip
