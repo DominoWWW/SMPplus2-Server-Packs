@@ -2,7 +2,7 @@
     "providers": [
        {
             "type": "bitmap",
-            "file": "minecraft:font/icons/logo.png",
+            "file": "minecraft:icons/logo.png",
             "ascent": 12,
             "height": 23,
             "chars": [
@@ -11,7 +11,7 @@
         },
         {
             "type": "bitmap",
-            "file": "minecraft:font/icons/discord.png",
+            "file": "minecraft:icons/discord.png",
             "ascent": 7,
             "height": 7,
             "chars": [
@@ -20,7 +20,7 @@
         },
         {
             "type": "bitmap",
-            "file": "minecraft:font/emotes/domdom.png",
+            "file": "minecraft:emotes/domdom.png",
             "ascent": 7,
             "height": 7,
             "chars": [
@@ -29,7 +29,7 @@
         },
         {
             "type": "bitmap",
-            "file": "minecraft:font/emotes/skull.png",
+            "file": "minecraft:emotes/skull.png",
             "ascent": 6,
             "height": 7,
             "chars": [
@@ -38,7 +38,7 @@
         },
         {
             "type": "bitmap",
-            "file": "minecraft:font/emotes/eyes.png",
+            "file": "minecraft:emotes/eyes.png",
             "ascent": 7,
             "height": 8,
             "chars": [
