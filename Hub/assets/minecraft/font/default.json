@@ -33,7 +33,7 @@
         },
         {
             "type": "bitmap",
-            "file": "minecraft:discord.png",
+            "file": "minecraft:logo.png",
             "ascent": 12,
             "height": 23,
             "chars": [
