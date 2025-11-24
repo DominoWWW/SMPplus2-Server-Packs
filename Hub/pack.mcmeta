@@ -1,6 +1,6 @@
 {
     "pack": {
-        "description": {"text":"Hub Resource Pack","bold":true,"color":"gold"},
+        "description": {"text":"Hub Resource Pack","bold":true,"color":"light_purple"},
         "min_format": 69.0,
         "max_format": 69.0
     }
