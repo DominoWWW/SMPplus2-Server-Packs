@@ -31,7 +31,7 @@ jobs:
           files: Hub/
           dest: hub.zip
 
-      - name: ⬆️ Upload Hub Release
+      - name: ⬆️ Uploading Hub Release
         id: upload-release-asset 
         uses: actions/upload-release-asset@v1
         env:
