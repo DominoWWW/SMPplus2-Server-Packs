@@ -3,28 +3,41 @@ on:
   push:
     branches:
       - main
+
+env:
+  VERSION: 0.1.0
+  MINECRAFT_VERSION: 1.21.10
+  NOTES: |
+    - Initial release.
+
 jobs:
-  validate-zip-and-deploy:
+  zip-and-publish:
     runs-on: ubuntu-latest
     steps:
-      - name: 📥 Checkout repository
-        uses: actions/checkout@v4
-      - name: 🔎 Validate Resource Pack
-        uses: MrKinau/ResourcePackValidator@v1
+      - name: 🫸Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          resourcepack: ./resources
-          config: .github/workflows/validate-resource-pack-config.json
-      - name: 🤐 zip
+            tag_name: 'v${{ env.VERSION }}_${{ env.MINECRAFT_VERSION }}'
+            release_name: '${{ github.event.repository.name }} v${{ env.VERSION }} ${{ env.MINECRAFT_VERSION }}'
+            body: '${{ env.NOTES }}'
+
+      - name: 🤐 Zipping Hub
         uses: actions/checkout@v2
       - uses: vimtor/action-zip@v1.2
         with:
           files: Hub/
           dest: hub.zip
-      - name: 🫸push
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
-          git add -A
-          git commit -m "Update hub.zip"
-          git push
+      - name: ⬆️ Upload Hub Release
+        id: upload-release-asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+          asset_path: ./${{ github.event.repository.name }}_v${{ env.VERSION }}_${{ env.MINECRAFT_VERSION }}.zip
+          asset_name: ${{ github.event.repository.name }}_v${{ env.VERSION }}_${{ env.MINECRAFT_VERSION }}.zip
+          asset_content_type: application/zip
