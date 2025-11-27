@@ -6,13 +6,13 @@
             "ascent": 12,
             "height": 23,
             "chars": [
-                "\uE000"
+                "\uE100"
             ]
         },
         {
             "type": "space",
             "advances": {
-                "": -7
+                "": -7
             }
         },
         {
@@ -21,7 +21,7 @@
             "ascent": 7,
             "height": 7,
             "chars": [
-                "\uE002"
+                "\uE102"
             ]
         },
         {
@@ -30,7 +30,7 @@
             "ascent": 7,
             "height": 7,
             "chars": [
-                "\uE003"
+                "\uE103"
             ]
         },
         {
@@ -39,7 +39,7 @@
             "ascent": 7,
             "height": 7,
             "chars": [
-                "\uE100"
+                "\uE200"
             ]
         },
         {
