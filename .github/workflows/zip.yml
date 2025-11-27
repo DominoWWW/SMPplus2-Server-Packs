@@ -5,7 +5,7 @@ on:
       - main
 
 env:
-  VERSION: 0.1.0
+  VERSION: 0.1.1
   MINECRAFT_VERSION: 1.21.10
   NOTES: |
     - Initial release.
